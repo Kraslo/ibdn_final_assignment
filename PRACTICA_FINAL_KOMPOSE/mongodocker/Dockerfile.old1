@@ -1,0 +1,23 @@
+FROM mongo:6.0
+
+WORKDIR /pcreativa
+
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
+
+RUN apt-get update && apt-get install -y curl
+RUN curl -sSL https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz | tar -C /usr/local/bin -xzv
+
+COPY practica_creativa .
+
+USER root
+
+RUN ls
+RUN ./resources/download_data.sh
+
+# ENTRYPOINT script
+COPY mongodocker/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+EXPOSE 27017
+
+CMD ["entrypoint.sh"]

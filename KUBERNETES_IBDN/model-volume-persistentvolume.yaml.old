@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    io.kompose.service: model-volume
+  name: model-volume
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: data/models_volume

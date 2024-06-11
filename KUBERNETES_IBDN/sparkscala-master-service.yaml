@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml convert
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: sparkscala-master
+  name: sparkmaster-service
+spec:
+  type: NodePort
+  ports:
+    - name: "40339"
+      port: 40339
+      targetPort: 40339
+    - name: "7077"
+      port: 7077
+      targetPort: 7077
+      nodePort: 30030
+    - name: "8082"
+      port: 8082
+      targetPort: 8080
+      nodePort: 30050
+    - name: "4040"
+      port: 4040
+      targetPort: 4040
+      nodePort: 30070
+  selector:
+    io.kompose.service: sparkscala-master

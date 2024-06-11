@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml convert
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: sparkscala-worker2
+  name: sparkscala-worker2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: sparkscala-worker2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yaml convert
+        kompose.version: 1.33.0 (3ce457399)
+      labels:
+        io.kompose.network/practica-final-kompose-app-tier: "true"
+        io.kompose.service: sparkscala-worker2
+    spec:
+      containers:
+        - env:
+            - name: MASTER_NAME
+              value: sparkmaster-service
+            - name: ROLE
+              value: worker
+          image: kraslo/sparkscala_kubernetes
+          name: sparkscala-worker2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+              hostPort: 8084
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/models
+              name: model-volume
+      restartPolicy: Always
+      volumes:
+        - name: model-volume
+          # persistentVolumeClaim:
+            # claimName: model-volume
+          hostPath:
+            path: /data/model_volume
+            type: DirectoryOrCreate
+        - name: data-volume
+          hostPath:
+            path: /data/data_volume
+            type: DirectoryOrCreate

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml convert
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: pyflask
+  name: pyflask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: pyflask
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yaml convert
+        kompose.version: 1.33.0 (3ce457399)
+      labels:
+        io.kompose.network/practica-final-kompose-app-tier: "true"
+        io.kompose.service: pyflask
+    spec:
+      containers:
+        - env:
+            - name: FLASK_ENV
+              value: development
+            - name: JAVA_HOME
+              value: /train_volume/java/openjdk
+            - name: PROJECT_HOME
+              value: /app
+            - name: SPARK_HOME
+              value: /train_volume/spark
+            - name: SPARK_MASTER_URL
+              value: spark://sparkmaster-service:7077
+          image: kraslo/pyflask_kubernetes:latest
+          name: pyflask
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5001
+              hostPort: 5001
+              protocol: TCP

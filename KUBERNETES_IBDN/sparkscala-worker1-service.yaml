@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml convert
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: sparkscala-worker1
+  name: sparkscala-worker1
+spec:
+  ports:
+    - name: "8083"
+      port: 8083
+      targetPort: 8081
+  selector:
+    io.kompose.service: sparkscala-worker1

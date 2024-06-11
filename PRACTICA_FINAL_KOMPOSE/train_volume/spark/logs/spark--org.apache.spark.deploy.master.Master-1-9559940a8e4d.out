@@ -1,0 +1,17 @@
+Spark Command: /opt/java/openjdk/bin/java -cp /opt/spark/conf:/opt/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host 9559940a8e4d --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/29 12:47:08 INFO Master: Started daemon with process name: 36@9559940a8e4d
+24/05/29 12:47:08 INFO SignalUtils: Registering signal handler for TERM
+24/05/29 12:47:08 INFO SignalUtils: Registering signal handler for HUP
+24/05/29 12:47:08 INFO SignalUtils: Registering signal handler for INT
+24/05/29 12:47:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/29 12:47:09 INFO SecurityManager: Changing view acls to: root
+24/05/29 12:47:09 INFO SecurityManager: Changing modify acls to: root
+24/05/29 12:47:09 INFO SecurityManager: Changing view acls groups to: 
+24/05/29 12:47:09 INFO SecurityManager: Changing modify acls groups to: 
+24/05/29 12:47:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+24/05/29 12:47:09 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+24/05/29 12:47:09 INFO Master: Starting Spark master at spark://9559940a8e4d:7077
+24/05/29 12:47:09 INFO Master: Running Spark version 3.3.3
+24/05/29 12:47:10 INFO Utils: Successfully started service 'MasterUI' on port 8080.

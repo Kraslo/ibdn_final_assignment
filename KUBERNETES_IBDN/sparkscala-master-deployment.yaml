@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml convert
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: sparkscala-master
+  name: sparkscala-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: sparkscala-master
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yaml convert
+        kompose.version: 1.33.0 (3ce457399)
+      labels:
+        io.kompose.network/practica-final-kompose-app-tier: "true"
+        io.kompose.service: sparkscala-master
+    spec:
+      containers:
+        - env:
+            - name: ROLE
+              value: master
+            - name: WORKER_COUNT
+              value: "2"
+            - name: SPARK_MASTER_PORT
+              value: "7077"
+          image: kraslo/sparkscala_kubernetes
+          name: spark-master
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 40339
+              hostPort: 40339
+              protocol: TCP
+            - containerPort: 7077
+              hostPort: 7077
+              protocol: TCP
+            - containerPort: 8080
+              hostPort: 8082
+              protocol: TCP
+            - containerPort: 4040
+              hostPort: 4040
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/models
+              name: model-volume
+      restartPolicy: Always
+      volumes:
+        - name: model-volume
+          # persistentVolumeClaim:
+            # claimName: model-volume
+          hostPath:
+            path: /data/model_volume
+            type: DirectoryOrCreate
+        - name: data-volume
+          hostPath:
+            path: /data/data_volume
+            type: DirectoryOrCreate
