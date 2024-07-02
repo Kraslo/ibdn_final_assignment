@@ -1,0 +1,7 @@
+Spark Command: /opt/java/openjdk/bin/java -cp /opt/spark/conf:/opt/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host 6bd54d702e5f --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/31 14:26:17 INFO Master: Started daemon with process name: 45@6bd54d702e5f
+24/05/31 14:26:18 INFO SignalUtils: Registering signal handler for TERM
+24/05/31 14:26:18 INFO SignalUtils: Registering signal handler for HUP
+24/05/31 14:26:18 INFO SignalUtils: Registering signal handler for INT

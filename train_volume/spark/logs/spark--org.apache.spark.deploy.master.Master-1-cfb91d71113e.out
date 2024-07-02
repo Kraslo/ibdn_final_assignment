@@ -1,0 +1,4 @@
+Spark Command: /opt/java/openjdk/bin/java -cp /opt/spark/conf:/opt/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host cfb91d71113e --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/06/09 16:37:22 INFO Master: Started daemon with process name: 36@cfb91d71113e

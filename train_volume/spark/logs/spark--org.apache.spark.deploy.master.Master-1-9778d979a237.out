@@ -1,0 +1,8 @@
+Spark Command: /opt/java/openjdk/bin/java -cp /opt/spark/conf:/opt/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host 9778d979a237 --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/31 14:30:24 INFO Master: Started daemon with process name: 36@9778d979a237
+24/05/31 14:30:24 INFO SignalUtils: Registering signal handler for TERM
+24/05/31 14:30:24 INFO SignalUtils: Registering signal handler for HUP
+24/05/31 14:30:24 INFO SignalUtils: Registering signal handler for INT
+24/05/31 14:30:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable

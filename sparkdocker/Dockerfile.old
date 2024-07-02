@@ -1,0 +1,17 @@
+FROM apache/spark:3.3.3
+
+USER root
+
+WORKDIR /app
+
+# Copy spark and java installations to train_volume
+# RUN cp -r /opt/spark /train_volume && cp -r /opt/java /train_volume
+
+# al parecer el MakePredictions.scala lo tiene que hacer pyflask
+# COPY practica_creativa .
+
+COPY sparkdocker/start-spark.sh /usr/local/bin/start-spark.sh
+
+RUN chmod +x /usr/local/bin/start-spark.sh
+
+ENTRYPOINT ["/usr/local/bin/start-spark.sh"]

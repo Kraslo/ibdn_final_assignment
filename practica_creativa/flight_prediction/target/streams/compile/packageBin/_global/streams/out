@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/flight_prediction_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm/dit[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm/dit[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm/dit/ging[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm/dit/ging[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm/dit/ging/predictor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm/dit/ging/predictor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm/dit/ging/predictor/MakePrediction$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm/dit/ging/predictor/MakePrediction$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/upm/dit/ging/predictor/MakePrediction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/kraslo/UNI/3ER_ANO/IBDN/PRACTICA_FINAL/practica_creativa/flight_prediction/target/scala-2.12/classes/es/upm/dit/ging/predictor/MakePrediction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
